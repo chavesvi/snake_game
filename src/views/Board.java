@@ -1,23 +1,34 @@
 package views;
 
 public class Board {
-	private String[][] board = new String[9][9];
+	private static int tamanhoBoard = 9;
+	private String[][] board = new String[tamanhoBoard][tamanhoBoard];
 	
-	public void getBoard() {
-		for(int i=0; i<9; i++) {
-			for(int j=0; j<9; j++) {
+	public Board() {
+		for(int i=0; i<tamanhoBoard; i++) {
+			for(int j=0; j<tamanhoBoard; j++) {
+				board[i][j] = " - ";
+			}
+		}
+	}
+	
+	public String[][] getBoard() {
+		return board;
+	}
+	
+	public void setBoard(int posicaoI, int posicaoJ, String valor) {
+		board[posicaoI][posicaoJ] = valor;
+	}
+	
+	public void lookBoard() {
+		for(int i=0; i<tamanhoBoard; i++) {
+			for(int j=0; j<tamanhoBoard; j++) {
 				System.out.print(board[i][j]);
 			}
 			System.out.println();
 		}
 	}
 	
-	public void criarBoard() {
-		for(int i=0; i<9; i++) {
-			for(int j=0; j<9; j++) {
-				board[i][j] = " - ";
-			}
-		}
-	}
+	
 	
 }
