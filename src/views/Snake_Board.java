@@ -14,9 +14,33 @@ public class Snake_Board{
 		board.setBoard(posicoesStart[0], posicoesStart[1], snake.getCorpoPosicao(snake.getSize()));
 	}
 	
-	public void movimentacao() {
-		board.setBoard(posicoes[0], posicoes[1], " - ");
+	public void direitaD() {
 		posicoes[1] ++;
 		board.setBoard(posicoes[0], posicoes[1], snake.getCorpoPosicao(snake.getSize()));
+		board.setBoard(posicoes[0], (posicoes[1] - (snake.getSize() + 1)), " - ");
+		if(snake.getSize() > 0) {
+			for(int i=1; i<=snake.getSize(); i++) {
+				board.setBoard(posicoes[0], (posicoes[1] + i), " O ");
+			}
+		}
 	}
+	
+	public void esquerdaA() {
+		board.setBoard(posicoes[0], posicoes[1], " - ");
+		posicoes[1] --;
+		board.setBoard(posicoes[0], posicoes[1], snake.getCorpoPosicao(snake.getSize()));
+	}
+	
+	public void subirW() {
+		board.setBoard(posicoes[0], posicoes[1], " - ");
+		posicoes[0] ++;
+		board.setBoard(posicoes[0], posicoes[1], snake.getCorpoPosicao(snake.getSize()));
+	}
+	
+	public void baixoS() {
+		board.setBoard(posicoes[0], posicoes[1], " - ");
+		posicoes[0] --;
+		board.setBoard(posicoes[0], posicoes[1], snake.getCorpoPosicao(snake.getSize()));
+	}
+	
 }

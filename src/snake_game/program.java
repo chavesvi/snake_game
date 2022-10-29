@@ -11,6 +11,7 @@ public class program {
 		
 		Board board = new Board();
 		Snake cobra = new Snake();
+		
 		Snake_Board sb = new Snake_Board(cobra, board);
 		
 //		String parteG = "erro";
@@ -30,11 +31,24 @@ public class program {
 //			board.setBoard(posI, posJ, parteG);
 //		}
 		
+		//System.out.println(cobra.toString());
+		
+//		board.lookBoard();
+//		cobra.addCorpo();
+//		sb.direitaD();
+//		board.lookBoard();
+//		cobra.addCorpo();
+//		sb.direitaD();
+//		board.lookBoard();
+//		sb.direitaD();
+//		board.lookBoard();
+		
+		
 		board.lookBoard();
-		sb.movimentacao();
+		cobra.addCorpo();
+		sb.esquerdaA();
 		board.lookBoard();
-		sb.movimentacao();
-		board.lookBoard();
+
 
 	}
 
